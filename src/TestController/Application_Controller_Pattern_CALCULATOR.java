@@ -1,22 +1,10 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package Main.TestController;
 
 import java.util.Arrays;
 import java.util.Scanner;
 
-/**
- *
- * @author sirri
- */
 public class Application_Controller_Pattern_CALCULATOR {
 
-    /**
-     * @param args the command line arguments
-     */
     public static void goMath(){
         String again = "y";
         while (again.equals("y")){
@@ -31,7 +19,7 @@ public class Application_Controller_Pattern_CALCULATOR {
             input1 = Double.parseDouble(getInput.nextLine());
             System.out.println("Enter operator: '(+,-,*,/,%,^)'");
             operator = getInput.nextLine();
-            if (checkOperator(operator) == false){
+            if (!checkOperator(operator)){
                 System.out.println("INVALID OPERATOR, TRY AGAIN");
                 continue;
             }
@@ -58,10 +46,7 @@ public class Application_Controller_Pattern_CALCULATOR {
     }
     
     private static Boolean checkOperator(String operator){
-        if (Arrays.asList("+","-","*","/","%","^").contains(operator)){
-            return true;
-        }else{return false;}
-        
+        return Arrays.asList("+","-","*","/","%","^").contains(operator);
     }
     
 }

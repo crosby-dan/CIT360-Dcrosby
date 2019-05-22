@@ -6,9 +6,11 @@ import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.TimeUnit;
 
+import static Main.Util.promptEnterKey;
+
 public class ThreadsDemo {
 
-    Runnable task = () -> {
+    private Runnable task = () -> {
 
         String currentThread=Thread.currentThread().getName();
         System.out.format("Running anonymous task from thread %s\n",currentThread);
@@ -41,7 +43,7 @@ public class ThreadsDemo {
         thread4.start();
         Thread thread5= new Thread(task);
         thread5.start();
-        Util.promptEnterKey();
+        promptEnterKey();
 
         }
     public void startThreadsES() {
@@ -65,7 +67,7 @@ public class ThreadsDemo {
         }
 
         //Get user input before returning to the main menu.
-        Util.promptEnterKey();
+        promptEnterKey();
     }
 
 }
